@@ -1,6 +1,3 @@
-binary Tree
-====================================================
-```C++
 #include <iostream>
 #include <string>
 #include <queue>
@@ -88,4 +85,4 @@ int main(){
 
     }
 }
-```
+
