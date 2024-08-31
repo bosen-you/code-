@@ -1,88 +1,94 @@
 #include <iostream>
 #include <string>
-#include <queue>
+#include <deque>
 using namespace std;
 
 struct Tree{
-    char value = ' ';
-    int parents = 0 , L = 0 , R = 0 , passed = 0;
-
+    char c;
+    int left = 0 , right = 0 , parent = 0;
+    bool check = 0;//false
 };
 
 int main(){
-    string a;
-    cin >> a;
-    int n = a.size()+1 , i = 1;
-    Tree tree[n];
-    while (i < n){
-        if (a[i-1] == '-'){
-           i++;
-           continue;
+    string s;
+    cin >> s;
+    int len = s.size()+1; // tree[0] = null , tree[1] ~ tree[n] is node
+    Tree tree[len];
+    int i = 1;
+    while (i < len){
+        if (s[i-1] == '-'){
+            i++;
+            continue;
         }
-
-        tree[i].value = a[i-1];
-
+        tree[i].c = s[i-1];
         if (i > 1){
-            tree[i].parents = i/2;
-            if (i % 2 == 0) tree[i/2].L = i;
-            else tree[i/2].R = i;
-
+            tree[i].parent = i/2;
+            if (i % 2 == 0) tree[i/2].left = i;
+            else    tree[i/2].right = i;
         }
         i++;
     }
-    /*for (int i = 1 , len = a.size()+1; i < len; i++){
-        cout << "node: " << tree[i].value;
-        cout << " parents: " << tree[tree[i].parents].value;
-        cout << " L: " << tree[tree[i].L].value << " R: " << tree[tree[i].R].value;
-        cout << endl;
-    }*/
 
-    int m;
-    cin >> m;
-    for (int i = 0; i < m; i++){
-        queue<int>h1 , h2;
+    int n;
+    cin >> n;
+    while (n--){
+        int start , end;
+        int count = 0;
         char s , e;
         cin >> s >> e;
-        int start = 0 , end = 0 , flag = 0 , count = 0;
-
-        //start , end position
-        for (int j = 0; j < n; j++){
-            if (tree[j].value == s)
-                start = j , flag++;
-
-            if (tree[j].value == e)
-                end = j , flag++;
-
-            if (flag == 2)  break;
+        deque<int>q1 , q2;
+        for (int t = 1; t < len; t++){
+            tree[t].check = 0;
+            if (tree[t].c == s) start = t;
+            if (tree[t].c == e) end = t;
         }
-        h1.push(start);
-        while (!h1.empty() || !h2.empty()){
-            int now = h1.front();
-            h1.pop();
-            tree[now].passed = 1;
-            printf("now:%c end:%c\n", tree[now].value, e);
-            if (tree[now].value == e){
-                cout << count;
+        //q1.push_back(start);
+        cout << q1.front() << " ";
+        while (!q1.empty() || !q2.empty()){
+            int temp = q1.front();  
+            q1.pop_front();
+            //cout << q2.size() << endl;
+            tree[temp].check = 1;
+            if (tree[temp].c == tree[end].c){
+                cout << count << endl;
                 break;
             }
-
-            if (tree[now].parents && !tree[tree[now].parents].passed)
-                h2.push(tree[now].parents);
-            if (tree[now].L && !tree[tree[now].L].passed)
-                h2.push(tree[now].L);
-            if (tree[now].R && !tree[tree[now].R].passed)
-                h2.push(tree[now].R);
-
-            if (h1.empty()){
-                while (!h2.empty()){
-                    int temp = h2.front();
-                    h1.push(temp);
-                    h2.pop();
+            //cout << 3 << endl;
+            if (tree[temp].parent && !tree[tree[temp].parent].check){
+                q2.push_back(tree[temp].parent);
+                //cout << "p: ";
+                //cout << q2.back() << endl;
+            }
+                
+            //cout << 4 << endl;
+            if (tree[temp].left && !tree[tree[temp].left].check){
+                q2.push_back(tree[temp].left);
+                //cout << "l: ";
+                //cout << q2.back() << endl;
+            }
+            //cout << 5 << endl;
+            if (tree[temp].right && !tree[tree[temp].right].check){
+                q2.push_back(tree[temp].right);
+                //cout << "r: ";
+                //cout << q2.back() << endl;
+            }
+            //cout << 6 << endl;
+            /*cout << "q1: ";
+            for (int b = 0; b < q1.size(); b++)
+                cout << q1[b] << " ";
+            cout << endl;
+            cout << "q2: ";
+            for (int a = 0; a < q2.size(); a++)
+                cout << q2[a] << " ";
+            cout << endl;*/
+            if (q1.empty()){
+                while (!q2.empty()){
+                    //cout << q2.size() << " ";
+                    q1.push_back(q2.front());   q2.pop_front();
                 }
                 count++;
             }
         }
-
     }
+    return 0;
 }
-
