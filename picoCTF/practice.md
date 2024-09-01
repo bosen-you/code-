@@ -242,3 +242,7 @@ CanYouSee
 ```
 - 用URL 解碼(base64)
 
+WebDecode
+===
+![image](https://github.com/user-attachments/assets/552ffbe8-05c5-4def-944c-3c16985148a8)
+* use base64 to decode
