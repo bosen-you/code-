@@ -1,6 +1,8 @@
 ## menu
 - [dfs python](#dfs-python)
-- [dfs cpp](#dfs-cpp)
+- [dfs Cpp](#dfs-cpp)
+- [bfs python](#bfs-python)
+- [bfs Cpp](#bfs-Cpp)
 - [dsu python](#dsu-python)
 - [dsu Cpp](#dsu-Cpp)
 
@@ -120,6 +122,105 @@ int main(){
 #### output 3
 ```shell
 5
+```
+
+## bfs python
+```python
+
+```
+
+## bfs cpp
+```C++
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+int maxdist = -1 , n;
+
+void bfs(vector<int> num[] , int node , vector<bool> &visited , vector<int> &dist){
+    queue<int> q;
+    visited[node] = true , dist[node] = 0;
+    q.push(node);
+    while (!q.empty()){
+        int first = q.front();  q.pop();
+        for (int n : num[first]){
+            if (!visited[n]){
+                dist[n] = dist[first] + 1;
+                if (dist[n] > maxdist)
+                    maxdist = dist[n];
+            visited[n] = true;
+            q.push(n);
+            }
+        }
+    }
+}
+
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+
+    int node , first;
+    cin >> n;
+    vector<int> num[n];
+    for (int i = 0; i < n-1; i++){
+        cin >> node >> first;
+        num[node].push_back(first);
+        num[first].push_back(node);
+    }
+
+    for (int i = 0; i < n; i++){
+        vector<bool> visited(n , false);
+        vector<int> dist(n , 0);
+        bfs(num , i , visited , dist);
+        // the max distance
+        if (maxdist == n-1)
+            break;
+    }
+
+    cout << maxdist << endl;
+    return 0;
+}
+```
+### dfs sample  
+#### input 1
+```shell
+5
+0 1
+1 2
+1 3
+3 4
+```
+#### output 1
+```shell
+3
+```
+#### input 2
+```shell
+6
+0 1
+1 2
+2 3
+3 4
+4 5
+```
+#### output 2
+```shell
+5
+```
+#### input 3
+```shell
+7
+0 1
+0 2
+0 3
+0 4
+0 5
+0 6
+```
+#### output 3
+```shell
+2
 ```
 
 ## dsu python
