@@ -1,8 +1,5 @@
 ## menu
-- [bubble_sort](#bubble sort)
-- [singly_linked_list](#singly linked list)
-- [double_linked_list](#double linked list)
-
+[TOC]
 ## bubble sort
 ```cpp
 #include <iostream>
