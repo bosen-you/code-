@@ -1,7 +1,7 @@
 ## menu
 - [dfs](#dfs)
-- [dsu(python)](#dsu-python)
-- [dsu(C++)](#dsu-C++)
+- [dsu python)](#dsu-python)
+- [dsu Cpp)](#dsu-Cpp)
 
 ## dfs
 ```C++
@@ -64,7 +64,7 @@ for i in range(g):
         print(":(")
 ```
 
-## dsu C++
+## dsu Cpp
 ```c++
 #include <iostream>
 #include <climits>
