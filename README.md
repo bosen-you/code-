@@ -1,1 +1,4 @@
-# This website majority contains algorithms and solutions for zerojudge , minority includes solution for picoCTF
+# This website included
+### 1. algorithm
+### 2. solution for zerojudge
+### 3. solution for picoCTF(minority)
