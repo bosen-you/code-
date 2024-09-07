@@ -1,7 +1,45 @@
 ## menu
+- [dfs python](#dfs-python)
 - [dfs cpp](#dfs-cpp)
 - [dsu python](#dsu-python)
 - [dsu Cpp](#dsu-Cpp)
+
+- Undirected Graph
+![image](https://github.com/user-attachments/assets/23c85ba1-935c-4183-bbd6-fe34d8c3d58f)
+
+
+## dfs python
+```python
+tree = {}
+maxdist = -1
+far = -1
+
+def dfs(node, parent, dist):
+    global maxdist, far
+    if dist > maxdist:
+        maxdist = dist
+        far = node
+
+    for child in tree[node]:
+        if child != parent:
+            dfs(child, node, dist+1)
+
+n = int(input())
+
+for i in range(n-1):
+    a, b = map(int, input().split())
+    if a not in tree:
+        tree[a] = []
+    if b not in tree:
+        tree[b] = []
+    tree[a].append(b)
+    tree[b].append(a)
+
+dfs(0, -1, 0)
+maxdist = -1
+dfs(far, -1, 0)
+print(maxdist)
+```
 
 ## dfs cpp
 ```C++
@@ -9,22 +47,22 @@
 #include <vector>
 using namespace std;
 
-vector<int>tree[1000001]; //create a tree
+vector<int>tree[100001]; //create a tree
 int maxdist = -1 , far = 0;
 
 void dfs(int node , int parent , int dist){
     if (dist > maxdist)
-        dist = maxdist , far = node;
+        maxdist = dist , far = node;
 
     for (int child : tree[node])
         if (child != parent)
-            dfs(child , node , dist++);
+            dfs(child , node , dist+1);
 }
 
 int main(){
     int n , a , b;
     cin >> n; //node number
-    for (int i = 0; i < n; i++){
+    for (int i = 1; i < n; i++){
         cin >> a >> b;
         //Undirected Graph
         tree[a].push_back(b);
@@ -38,6 +76,50 @@ int main(){
     cout << maxdist << endl;
     return 0;
 }
+```
+### dfs sample  
+#### input 1
+```shell
+5
+0 1
+1 2
+2 3
+3 4
+```
+#### output 1
+```shell
+4
+```
+#### input 2
+```shell
+7
+0 1
+0 2
+1 3
+1 4
+2 5
+2 6
+```
+#### output 2
+```shell
+3
+```
+#### input 3
+```shell
+10
+0 1
+1 2
+1 3
+2 4
+2 5
+3 6
+4 7
+5 8
+6 9
+```
+#### output 3
+```shell
+5
 ```
 
 ## dsu python
