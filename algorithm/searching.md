@@ -1,17 +1,19 @@
 ## menu
-- [dfs python](#dfs-python)
-- [dfs Cpp](#dfs-cpp)
-- [bfs python](#bfs-python)
-- [bfs Cpp](#bfs-Cpp)
-- [dsu python](#dsu-python)
-- [dsu Cpp](#dsu-Cpp)
-
+- [dfs](#dfs)
+- [bfs](#bfs)
+- [dsu](#dsu)
 - Undirected Graph
 
 ![image](https://github.com/user-attachments/assets/23c85ba1-935c-4183-bbd6-fe34d8c3d58f)
 
 
-## dfs python
+## dfs 
+- 適用時機
+    1. 遍歷所有可能的路徑：如迷宮求解
+    2. 拓撲排序：用在有向無環圖（DAG)。
+    3. 回溯算法：如解決數獨、N 皇后問題。
+    4. 強連通分量（SCC）：A <-> B。
+- python
 ```python
 tree = {}
 maxdist = -1
@@ -125,12 +127,17 @@ int main(){
 5
 ```
 
-## bfs python
+## bfs 
+- 適用時機
+    1. 最短路徑問題：特別是在無權圖中
+    2. 尋找最近的目標
+    3. 層級遍歷：如二元樹的層次遍歷。
+- python
 ```python
 
 ```
 
-## bfs cpp
+- cpp
 ```C++
 #include <iostream>
 #include <vector>
@@ -183,7 +190,7 @@ int main(){
     return 0;
 }
 ```
-### dfs sample  
+### bfs sample  
 #### input 1
 ```shell
 5
@@ -224,7 +231,12 @@ int main(){
 2
 ```
 
-## dsu python
+##  dsu
+- 適用時機
+    連通性問題：可以新增或刪除節點，並快速判斷兩個節點是否仍然連通。
+    最小生成樹（MST）：判斷是否會形成環。
+    動態連接問題：檢查圖中兩個節點是否連通。
+- python
 ```python
 def FindParent(x):
     if (parent[x] == x):
@@ -259,7 +271,7 @@ for i in range(g):
         print(":(")
 ```
 
-## dsu Cpp
+- Cpp
 ```c++
 #include <iostream>
 #include <climits>
