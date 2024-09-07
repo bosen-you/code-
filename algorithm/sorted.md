@@ -1,4 +1,3 @@
-## menu
 [TOC]
 ## bubble sort
 ```cpp
