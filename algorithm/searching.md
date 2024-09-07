@@ -1,7 +1,8 @@
 ## menu
 - [dfs](#dfs)
-- [dsu(python)](#dsu(python))
-- [dsu(C++)](#dsu(C++))
+- [dsu(python)](#dsu-python)
+- [dsu(C++)](#dsu-C++)
+
 ## dfs
 ```C++
 #include <iostream>
@@ -28,7 +29,7 @@ int main(){
 }
 ```
 
-## dsu(python)
+## dsu python
 ```python
 def FindParent(x):
     if (parent[x] == x):
@@ -63,7 +64,7 @@ for i in range(g):
         print(":(")
 ```
 
-## dsu(C++)
+## dsu C++
 ```c++
 #include <iostream>
 #include <climits>
