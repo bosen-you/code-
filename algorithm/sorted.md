@@ -1,7 +1,7 @@
 ## menu
-- [bubble sort](#bubble sort)
-- [singly linked list](#singly linked list)
-- [double linked list](#double linked list)
+- [bubble_sort](#bubble sort)
+- [singly_linked_list](#singly linked list)
+- [double_linked_list](#double linked list)
 
 ## bubble sort
 ```cpp
