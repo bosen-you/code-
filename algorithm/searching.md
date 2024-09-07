@@ -1,7 +1,7 @@
 ## menu
 - [dfs](#dfs)
-- [dsu python)](#dsu-python)
-- [dsu Cpp)](#dsu-Cpp)
+- [dsu python](#dsu-python)
+- [dsu Cpp](#dsu-Cpp)
 
 ## dfs
 ```C++
