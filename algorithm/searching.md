@@ -8,12 +8,12 @@
 
 
 ## dfs 
-- 適用時機
+### 適用時機
     1. 遍歷所有可能的路徑：如迷宮求解
     2. 拓撲排序：用在有向無環圖（DAG)。
     3. 回溯算法：如解決數獨、N 皇后問題。
     4. 強連通分量（SCC）：A <-> B。
-- python
+### python
 ```python
 tree = {}
 maxdist = -1
@@ -46,7 +46,7 @@ dfs(far, -1, 0)
 print(maxdist)
 ```
 
-## dfs cpp
+### cpp
 ```C++
 #include <iostream>
 #include <vector>
@@ -82,7 +82,7 @@ int main(){
     return 0;
 }
 ```
-### dfs sample  
+### sample  
 #### input 1
 ```shell
 5
@@ -128,16 +128,16 @@ int main(){
 ```
 
 ## bfs 
-- 適用時機
+### 適用時機
     1. 最短路徑問題：特別是在無權圖中
     2. 尋找最近的目標
     3. 層級遍歷：如二元樹的層次遍歷。
-- python
+### python
 ```python
 
 ```
 
-- cpp
+### cpp
 ```C++
 #include <iostream>
 #include <vector>
@@ -190,7 +190,7 @@ int main(){
     return 0;
 }
 ```
-### bfs sample  
+### sample  
 #### input 1
 ```shell
 5
@@ -232,11 +232,11 @@ int main(){
 ```
 
 ##  dsu
-- 適用時機
+### 適用時機
     連通性問題：可以新增或刪除節點，並快速判斷兩個節點是否仍然連通。
     最小生成樹（MST）：判斷是否會形成環。
     動態連接問題：檢查圖中兩個節點是否連通。
-- python
+### python
 ```python
 def FindParent(x):
     if (parent[x] == x):
@@ -271,7 +271,7 @@ for i in range(g):
         print(":(")
 ```
 
-- Cpp
+### Cpp
 ```c++
 #include <iostream>
 #include <climits>
@@ -310,7 +310,7 @@ int main(){
 }
 ```
 
-### dsu sample  
+### sample  
 #### input 1
 ```shell
 5 3 2
