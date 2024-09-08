@@ -62,6 +62,7 @@ cpp
     - list 要先 sort
     - if t in (first , last]    cout << position
       else cout << last
+
 2. upper_bound()
     - find > t
 3. binary_search()
