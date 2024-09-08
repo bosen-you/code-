@@ -54,7 +54,7 @@ def jump_search(x , n):
 
 ### 3.函式庫
 cpp
-```shell
+```
 - 三個定義方式差不多
 1. lower_bound(first , last , t , function)
     -  find >= t
