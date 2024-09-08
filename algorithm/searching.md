@@ -14,7 +14,7 @@ int bsearch(int a[] , int left , int right , int x){
 }
 ```
 
-### python
+#### python
 ```python
 def bsearch(left , right , x):
     while (left < right):
