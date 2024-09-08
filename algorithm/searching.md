@@ -61,11 +61,12 @@ cpp
     - range : (first , last]
     - list 要先 sort
     - if t in (first , last]    cout << position
-      else cout << last
+    - else cout << last
 
 2. upper_bound()
     - find > t
+
 3. binary_search()
     - if t in list    cout << true
-      else cout << false
+    - else cout << false
 ```
