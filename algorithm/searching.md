@@ -134,7 +134,38 @@ int main(){
     3. 層級遍歷：如二元樹的層次遍歷。
 ### python
 ```python
+n = int(input())
 
+num = [[] for _ in range(n)]
+
+for _ in range(n-1):
+    node , first = map(int , input().split())
+    num[node].append(first)
+    num[first].append(node)
+
+def bfs(start):
+    dist = [0] * n
+    q = [start]
+    dist[start] = 0
+
+    maxdist = 0
+    far = start
+
+    while q:
+        fir = q.pop(0)
+        for n in num:
+            if dist[n] == 0:
+                dist[n] = dist[fir] + 1
+            if dist[n] > maxdist:
+                maxdist = dist[n]
+                far = n
+    return n , maxdist
+
+if n == 1:  print(0)
+else:
+    far , _ = bfs(0)
+    _ , maxdist = bfs(far)
+    print(maxdist)
 ```
 
 ### cpp
