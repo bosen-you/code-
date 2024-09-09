@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/3eceb3f6-cc87-4585-a377-ecdb23fcb279)
 
 ## python 
-```python
+```python=
 def hanoi(n , a , b , c):
     if (n == 1):
         print(f'{a} -> {c}')
@@ -18,7 +18,7 @@ hanoi(l , x , y , z)
 ```
 
 ## Cpp
-```cpp
+```cpp=
 #include <iostream>
 #include <algorithm>
 using namespace std;
