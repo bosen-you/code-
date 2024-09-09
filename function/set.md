@@ -72,5 +72,4 @@ set.clear(); //map = {}
 ```cpp
 set<int>map;
 map.empty();
-}
 ```
