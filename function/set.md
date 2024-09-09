@@ -4,6 +4,7 @@ set<int>map;
 ```
 2. 插入、讀取值
 ```cpp
+#include <set>
 set<int>map;
 set.insert(value);
 ```
