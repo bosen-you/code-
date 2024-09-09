@@ -8,7 +8,7 @@ Easy-General Skills
 python
 ```
 ```python=
-chr(0x70) //p
+chr(0x70)
 ```
 
 ### what's a net cat?
