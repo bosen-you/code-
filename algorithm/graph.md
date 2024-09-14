@@ -47,7 +47,7 @@ print(maxdist)
 ```
 
 ### cpp
-```cpp
+```cc
 #include <iostream>
 #include <vector>
 using namespace std;
