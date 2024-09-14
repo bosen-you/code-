@@ -1,20 +1,31 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+
 int main(){
-	int n , cost;
-	char s;
-	cin >> n >> cost >> s;
-	
-	double total = 0;
-	if (s == 'T')		total = n * 1.00; 
-	else if (s == 'U')	total = n / 30.9; 	
-	else if (s == 'J')	total = n / 0.28;
-	else if (s == 'E')	total = n / 34.5;
-	
-	total -= cost;
-	if (total < 0)	cout << "No Money";
-	else if (total <= 0.05)	cout << s << " 0.00";
-	else{
-	       	printf("%c %.2f" , s , total);	
-	}
+    int n , m , q;
+    cin >> n >> m >> q;
+    bool dis[205][205] = {};
+    for (int i = 0; i < n; i++)
+        dis[i][i] = true;
+
+    int a , b;
+    for (int i = 0; i < m; i++){
+        cin >> a >> b;
+        dis[a][b] = true;
+    }
+
+    for (int k = 0; k < n; k++)
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                dis[i][j] |= dis[i][k] && dis[k][j];
+
+    for (int i = 0; i < q; i++){
+        cin >> a >> b;
+        if (dis[a][b])
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+    return 0;
 }
