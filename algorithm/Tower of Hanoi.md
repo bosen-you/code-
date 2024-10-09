@@ -42,7 +42,7 @@ int main(){
 # 三色河內塔
 - num 一定要加上global
 ## python
-```
+```python
 num = 0
 num = 0
 def move(n , s , e , by):
