@@ -40,7 +40,7 @@ int main(){
 ```
 
 # 三色河內塔
-- num 一定要加上global
+- 一定要寫```global num```，如果沒有寫，num 預設為 local variable
 ## python
 ```python
 num = 0
