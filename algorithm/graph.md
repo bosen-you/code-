@@ -159,6 +159,7 @@ def bfs(start):
             if dist[n] > maxdist:
                 maxdist = dist[n]
                 far = n
+            q.append(n)
     return n , maxdist
 
 if n == 1:  print(0)
